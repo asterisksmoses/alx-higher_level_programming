@@ -4,19 +4,15 @@ def list_division(my_list_1, my_list_2, list_length):
 
     for y in range(list_length):
         try:
-            if y < len(my_list_1) and y < len(my_list_2):
-                res.append(my_list_1[y] / my_list_2[y])
-            else:
-                raise IndexError("out of range")
-        except ZeroDivisionError:
-            print("division by 0")
-            res.append(0)
+            divs = my_list_1[y] / my_list_2[y]
         except TypeError:
             print("wrong type")
-            res.append(0)
-        except IndexError as e:
-            print(e)
-            res.append(0)
+            divs = 0
+        except ZeroDivisionError:
+            print("division by 0")
+        except IndexError:
+            print("out of range")
+            divs = 0
         finally:
-            print(res[y])
-        return res
+            res.append(divs)
+    return res
