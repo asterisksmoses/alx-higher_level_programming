@@ -15,7 +15,6 @@ class Square:
         """A Getter way to retrieve the size of the square."""
         return self.__size
 
-
     def set_size(self, value):
         """A size setter method the set the size of the square."""
         if not isinstance(value, int):
