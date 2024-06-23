@@ -3,7 +3,7 @@
 import MySQLdb
 import sys
 
-def filt_states(username, password, database):
+if __name__ == "__main__":
     """Connect to a MySQL database and filter all states with a name starting with
     upper N.
     Args:
@@ -11,26 +11,31 @@ def filt_states(username, password, database):
     password: The MySQL password
     database: The MySQL database
     """
-    try:
-        db = MySQLdb.connect(
-                host="localhost",
-                user=username,
-                passwd=password,
-                db=database
-            )
-        cur = db.cursor()
 
-        query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
-        cur.execute(query)
+    db = MySQLdb.connect(
+            host="localhost",
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            db=sys.argv[3],
+            port=3306
+        )
 
-        res = cur.fetchall()
+    cur = db.cursor()
 
-        for row in res:
-            print(row)
-    
-    except MySQLdb.Error as e:
-        print(f"Error: {e}")
+    query = """
+    SELECT MIN(states.id), states.name
+    FROM states
+    WHERE states.name LIKE BINARY 'N%'
+    GROUP BY states.name
+    ORDER BY MIN(states.id)
+    """
 
-    finally:
-        cur.close()
-        db.close()
+    cur.execute(query)
+
+    rows = cur.fetchall()
+
+    for row in rows:
+        print(row)
+
+    cur.close()
+    db.close()
