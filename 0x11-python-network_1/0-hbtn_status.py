@@ -12,7 +12,10 @@ if __name__ == "__main__":
         with urllib.request.urlopen(url) as r:
             part = r.read()
 
-            decoded_part = part.decode('utf-8')
+            print("Body response:")
+            print("\t- type: {}".format(type(part)))
+            print("\t- content: {}".format(part))
+            print("\t- utf8 content: {}".format(part.decode('utf-8')))
 
     except urllib.error.HTTPError as e:
         print(f"HTTP Error: {e.code} - {e.reason}")
