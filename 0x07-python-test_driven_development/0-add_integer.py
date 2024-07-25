@@ -12,7 +12,7 @@ def add_integer(a, b=98):
 
     Returns:
     This function returns the computed sum of the two integers.
-    
+
     Examples:
     >>> add_integer(1, 2)
     3
@@ -40,4 +40,3 @@ def add_integer(a, b=98):
     b = int(b)
 
     return a+b
-
