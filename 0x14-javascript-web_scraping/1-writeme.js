@@ -16,5 +16,5 @@ fs.writeFile(file_Path, string_To_Write, 'utf8', (err) => {
 		console.error('Error occured while writing to file:', err);
 		return;
 	}
-	console.log('Successfully wrote to $file_Path');
+	console.log(`Successfully wrote to $file_Path`);
 });
