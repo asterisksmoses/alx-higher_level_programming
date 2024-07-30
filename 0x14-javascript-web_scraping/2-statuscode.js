@@ -15,6 +15,4 @@ request.get(url, (error, response, body) => {
 		console.error('Error in making a request:', error);
 		return;
 	}
-
-	console.log('code: ${response.statusCode}');
 });
