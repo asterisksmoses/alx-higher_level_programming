@@ -1,0 +1,38 @@
+>>> from 3 say_my_name.py import say_my_name
+
+>>> first_name = John
+>>> last_name = Wick
+>>> say_my_name(first_name, last_name="")
+My name is John Wick
+
+>>> first_name = Alex
+>>> say_my_name(first_name, last_name="")
+My name is Alex
+
+>>> first_name = ""
+>>> last_name = ""
+>>> say_my_name(first_name, last_name="")
+My name is
+
+>>> first name = 426
+>>> last_name = Wick
+>>> say_my_name(first_name, last_name="")
+Traceback (most recent call last):
+
+>>> first_name = John
+>>> last_name = 134
+>>> say_my_name(first_name, last_name="")
+Traceback (most recent call last):
+   ...
+TypeError(last_name must be a string)
+
+>>> first_name = 134
+>>> last_name = 126
+>>> say_my_name(first_name, last_name="")
+Traceback (most recent call last):
+   ...
+TypeError(first_name must be a string)
+Traceback (most recent call last):
+   ...
+TypeError(last_name must be a string)
+
