@@ -1,0 +1,43 @@
+>>> from 4 print_square.py import print_square
+
+>>> size = 4
+>>> print_square(size)
+####
+####
+####
+####
+
+>>> size = 0
+>>> print_square(size)
+
+
+>>> size = -1
+>>> print_square(size)
+Traceback (most recent call last)
+   ...
+ValueError: size must be >= 0
+
+>>> size = 4.5
+>>> print_square(size)
+Traceback (most recent call last)
+   ...
+TypeError: size must be an integer
+
+>>> size = "4"
+>>> print_square(size)
+Traceback (most recent call last)
+   ...
+TypeError: size must be an integer
+
+>>> size = 10
+>>> print_square(size)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
