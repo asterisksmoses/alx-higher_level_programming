@@ -1,0 +1,34 @@
+>>> text = "Hello. Are you there? I was just saying hi:"
+>>> text_indentation(text)
+Hello.
+
+Are you there?
+
+I was just saying hi
+
+>>> text = "No punctuation here"
+>>> text_identation(text)
+No punctuation here
+
+>>> text = 12345
+>>> text_indentation(text)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text = "    Leading people.    Last spaces?    "
+>>> text_indentation(text)
+   Leading people.
+
+   Last spaces?
+
+>>> text = "A lot of spaces after a period.        A new sentence this is."
+>>> text_indentation(text)
+A lot of spaces after a period.
+
+A new sentence this is.
+
+>>> text = ""
+>>> text_indentation(text)
+
+
